@@ -15,6 +15,7 @@ while True:
             return False
         for letter in target:
             source = re.sub(re.escape(letter), "", source, 1)
+            source = re.sub(re.escape("?"), "", source, 1)
         return (len(source) == diff)
 
     print(rack_management(source, target))
